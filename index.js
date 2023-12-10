@@ -41,7 +41,7 @@ const server = http.createServer((req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     if (req.url === '/api') {
         // read public.html file from public folder
-        fs.readFile(path.join(__dirname, 'public', 'index.html'),
+        fs.readFile(path.join(__dirname, 'index.html'),
                     (err, content) => {
                                     
                                     if (err) throw err;
