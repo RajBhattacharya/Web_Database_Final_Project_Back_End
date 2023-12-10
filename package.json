@@ -6,6 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node server.js"
+     
+    "start": "node index.js",
+    "build": "your-build-command",
+    "deploy": "npm run build && render deploy"
   },
   "author": "",
   "license": "ISC",
