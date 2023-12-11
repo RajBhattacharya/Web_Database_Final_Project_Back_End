@@ -42,10 +42,13 @@ const server = http.createServer((req, res) => {
       if (req.url === '/') {
         // read public.html file from public folder
         fs.readFile(path.join(__dirname, 'index.html'),
-                    (err, content) => {
-                                    
-                                    
+                    (err, content) => {                                    
                                     res.writeHead(200, { 'Content-Type': 'text/html' });
+                                    res.end(content);
+                        })
+        fs.readFile(path.join(__dirname, 'styles.css'),
+                    (err, content) => {                                    
+                                    res.writeHead(200, { 'Content-Type': 'text/css' });
                                     res.end(content);
                         }
               );
