@@ -39,38 +39,23 @@ const server = http.createServer((req, res) => {
    
     
     res.setHeader('Access-Control-Allow-Origin', '*');
-    if (req.url === '/api') {
-        // read public.html file from public folder
-        fs.readFile(path.join(__dirname, 'index.html'),
-                    (err, content) => {
-                                    
-                                    if (err) throw err;
-                                    res.writeHead(200, { 'Content-Type': 'text/html' });
-                                    res.end(content);
-                        }
-              );
-     }
-
-    
-    //else if (req.url==='/')
-    //{
-        //console.log("Hello World!!!");
-        //getData(res);
-    //}
-
- 
-    else if (req.url === '/') {
+      if (req.url === '/') {
         // read public.html file from public folder
         fs.readFile(path.join(__dirname, 'public', 'index.html'),
                     (err, content) => {
                                     
-                                    if (err) throw err;
+                                    
                                     res.writeHead(200, { 'Content-Type': 'text/html' });
                                     res.end(content);
                         }
               );
      }
 
+        else if (req.url==='/api')
+    {
+        
+        getData(res);
+    }
 
 
     else{
